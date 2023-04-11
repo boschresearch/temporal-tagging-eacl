@@ -61,7 +61,28 @@ pip install -r requirements.txt
 ```
 
 ### Download our models and data
-The models are available in the [models](models) and [data](data) directories, respectively. 
+
+Download the models from our release page https://github.com/boschresearch/temporal-tagging-eacl/releases/tag/Resources and extract them.
+Create a directory named `data/data_weak_supervision` and move the extracted `global_voices` and/or `wikipedia` directories there. 
+The extracted model directories should be moved to `models`.
+
+The resulting directories should have the following structure: 
+
+```
+tree .
+├ ...
+├───data
+│   └───data_weak_supervision
+│       ├───global_voices
+│       └───wikipedia
+├───models
+│   ├───mlm-xlm-base-multilingual-temporal
+│   ├───ner-xlm-base-base-multilingual-gold-temporal
+│   └───ner-xlm-base-base-multilingual-weak-temporal
+├ ...
+```
+
+After this, the models are available in the [models](models) and [data](data) directories, respectively. 
 
 We provide the following pre-trained models for the *extraction*:
 * [XLM-base model trained on our weakly supervised extractions](models/ner-xlm-base-base-multilingual-weak-temporal)
@@ -69,6 +90,8 @@ We provide the following pre-trained models for the *extraction*:
 
 and the following model for the *extraction*:
 * [XLM-base model trained for our masked language modeling approach](models/mlm-xlm-base-multilingual-temporal)
+
+
 
 
 ## Temporal tagging with our models
